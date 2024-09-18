@@ -1,0 +1,35 @@
+
+//<--0-->// Default Color //<--0-->//
+
+:root {
+    --body: #141410;
+    --white: #ffffff;
+    --title: #181818;
+    --newbg: #1c1c1c;
+    --mtitle: #000D27;
+    --pra: #999999;
+    --cbg: #F0F0F0;
+    --cbg1: #FAEBD6;
+    --subtitle: #121212;
+    // --base: rgb(187 233 0);
+    --base: #E0874B;
+    --hover: #d37639;
+    // --hover: #c2ec1d9e;
+    --bg1: #E9F0FF;
+    --ftext: #818181;
+    --footer: #181818;
+    --cusborder: rgb(38, 37, 37);
+    --border1: #414141;
+    --ratting: #ffa311;
+    --bgsection: #000D27;
+    --success: #3FCA90;
+    --danger: #ED5050;
+    --boxes1: rgba(26, 77, 190, 0.05);
+    --cborder: #D9D9D9;
+}
+
+.pra{
+    color: var(--pra) !important;
+}
+
+//<--0-->// Default Color //<--0-->//
