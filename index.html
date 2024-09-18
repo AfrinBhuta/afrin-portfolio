@@ -1145,19 +1145,47 @@
             </div>
             <div class="col-lg-5 col-md-6">
                <div class="footer-widget">
-				 <form class="form" name="enq" method="post" action="contact.php" onsubmit="return validation();">
-                     <input type="text" name="name" placeholder="Name" required="required">
-                     <input type="email" name="email" placeholder="Email." required="required">
-                     <input type="text" name="subject" placeholder="Subject" required="required">
-                     <textarea name="message" rows="4" placeholder="Write a Message" required="required"></textarea>
-					 <button type="submit" value="Send message" name="submit" class="cmn--btn base mb-4 py-3 px-6 d-inline-flex gap-2 align-items-center" style="border:none;">
-						  <span class="d-block mtitle">
-							Send message
-						  <i class="bi bi-arrow-up-right"></i>
-					   </button>
-                  </form>
+                   <form class="form" name="enq" id="contactForm">
+                       <!-- Replace with your Access Key -->
+                       <input type="hidden" name="access_key" value="37ce2be1-0d3a-4d22-8b93-b4898e7b2803">
+                       <input type="text" name="name" placeholder="Name" required="required">
+                       <input type="email" name="email" placeholder="Email" required="required">
+                       <textarea name="message" rows="4" placeholder="Write a Message" required="required"></textarea>
+                       <button type="submit" class="cmn--btn base mb-4 py-3 px-6 d-inline-flex gap-2 align-items-center" style="border:none;">
+                           <span class="d-block mtitle">
+                               Send message
+                               <i class="bi bi-arrow-up-right"></i>
+                           </span>
+                       </button>
+                   </form>
                </div>
-            </div>
+           </div>
+           
+           <script>
+               document.getElementById('contactForm').addEventListener('submit', function(event) {
+                   event.preventDefault(); // Prevent default form submission
+           
+                   const formData = new FormData(this);
+           
+                   fetch('https://api.web3forms.com/submit', {
+                       method: 'POST',
+                       body: formData
+                   })
+                   .then(response => {
+                       if (response.ok) {
+                           // Redirect to thankyou.html
+                           window.location.href = 'thank-you.html';
+                       } else {
+                           // Handle error
+                           console.error('Form submission failed:', response.statusText);
+                       }
+                   })
+                   .catch(error => {
+                       console.error('Error:', error);
+                   });
+               });
+           </script>
+           
          </div>
       </div>
    </div>
