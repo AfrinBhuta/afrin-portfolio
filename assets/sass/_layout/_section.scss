@@ -363,7 +363,7 @@
 //<<<-- unique commit -->>>//
 .unique__comititem{
     width: 385px;
-    height: 727px;
+    height: 427px;
     overflow: hidden;
     position: relative;
     transition: all 0.4s;
@@ -503,6 +503,13 @@
     .ucom{
         background: var(--base);
         color: var(--mtitle);
+    }
+}
+.unc__1{
+	background: url(../../assets/img/protfolio/prot-detials1.png) no-repeat center center;
+	background-size: cover;
+    @include breakpoint(max-xl){
+        display: none !important;
     }
 }
 .unc__2{
